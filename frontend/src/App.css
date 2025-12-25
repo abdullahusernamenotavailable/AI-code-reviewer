@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background: #0a0a0a;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.2rem;
+
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+}
+
+/* LEFT + RIGHT PANELS */
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+/* LEFT CODE SECTION */
+main .left {
+  position: relative;
+}
+
+/* CODE EDITOR */
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: inherit;
+  background-color: #111;
+  padding: 1rem;
+  border: 1px solid #222;
+}
+
+/* REVIEW BUTTON */
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+
+  background: linear-gradient(135deg, #7b5cff, #5b3bff);
+  color: white;
+  padding: 0.6rem 2.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0.6rem;
+
+  box-shadow: 0 0 15px rgba(123, 92, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+main .left .review:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(123, 92, 255, 0.9);
+}
+
+/* RIGHT PANEL - AI REVIEW */
+main .right {
+  padding: 1.2rem 2rem;
+  font-size: 1.4rem;
+  overflow-y: auto;
+  color: #c3ffd4; 
+  line-height: 1.6;
+}
+
+main .right::-webkit-scrollbar {
+  width: 8px;
+}
+main .right::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 20px;
+}
+
+.markdown-output {
+  color: #c3ffd4;
+}
+
+.markdown-output code {
+  background: #1b1b1b;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+
+.markdown-output pre code {
+  display: block;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  background: #0e0e0e !important;
+  font-size: 1.1rem;
+}
